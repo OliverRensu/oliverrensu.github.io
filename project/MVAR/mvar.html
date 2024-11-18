@@ -1,0 +1,324 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://6.869.csail.mit.edu/fa19/schedule.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+<style>
+    @import url('https://fonts.cdnfonts.com/css/chalkduster');
+</style>
+<script src="./sm/assets/teaser-data.js"></script>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>M-VAR: Decoupled Scale-wise Autoregressive Modeling for High-Quality Image Generation</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="description"
+        content="Project page for &#39;M-VAR: Decoupled Scale-wise Autoregressive Modeling for High-Quality Image Generation.&#39;">
+    <!-- <link rel="icon" href="./path.jpg"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>M-VAR: Decoupled Scale-wise Autoregressive Modeling for High-Quality Image Generation</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="description"
+        content="Project page for &#39;DIRECT-3D: Learning Direct Text-to-3D Generation on Massive Noisy 3D Data.&#39;">
+    <!-- <link rel="icon" href="./path.jpeg"> -->
+</head>
+
+<body>
+    <p class="title">M-VAR: Decoupled Scale-wise Autoregressive Modeling for High-Quality Image Generation</p>
+    <!-- <div style="text-align: center; font-size: 40pt; margin-bottom: 30px"> -->
+            <!-- <span>CVPR 2023</span> -->
+    <!-- </div> -->
+
+    &nbsp;<br>
+    <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px; font-size: 26px;">
+        <tbody>
+            <tr>
+                <td style="text-align: center; width:0%; "></td>
+            </tr>
+        </tbody>
+    </table>
+    &nbsp;<br>
+
+    <p class="author">
+        <span class="author-block">
+            <a href="https://oliverrensu.github.io/">Sucheng Ren</a><sup>1</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+              <a href="https://yaodongyu.github.io/">Yaodong Yu</a><sup>2</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+              <a href="https://natanielruiz.github.io/">Nataniel Ruiz</a><sup>3</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+            <a href="https://wangf3014.github.io/home/">Feng Wang</a><sup>1</sup>,&nbsp&nbsp
+          </span>
+          <span class="author-block">
+            <a href="https://ccvl.jhu.edu/team/">Alan Yuille</a><sup>1</sup>,&nbsp&nbsp
+          </span>
+          <span class="author-block">
+            <a href="https://cihangxie.github.io/">Cihang Xie</a><sup>4</sup>,&nbsp&nbsp
+          </span>
+
+          
+    </p>
+    <table border="0" align="center" class="affiliations">
+        <tbody align="center">
+            <tr>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>1</sup>&nbsp;Johns Hopkins University</td>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>2</sup>&nbsp;University of California, Berkeley</td>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>3</sup>&nbsp;Google</td>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>4</sup>&nbsp;UC Santa Cruz</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+        <tbody>
+            <tr>
+                <td align="center"> <a href="https://arxiv.org/abs/2411.10433" target="_blank">[Paper]</a>&emsp;&emsp;<a href="https://github.com/OliverRensu/MVAR">[Code & Models]</a>&emsp;&emsp;<a href="bibtex.txt">[BibTeX]</a> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    &nbsp;<br>
+    &nbsp;<br>
+
+     
+    
+    <div class="container">
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/visual.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+                <!-- <tr>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Wall-E</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>an astronaut wearing a colorful spacesuit</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Transformed Bumblebee robot with intricate body details</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a batman mask</em></td>
+                </tr> -->
+            </tbody>
+        </table>
+
+        &nbsp;<br>
+        
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Method</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>There exists recent work in computer vision, named VAR, that proposes a new autoregressive paradigm for image generation. Diverging from the vanilla next-token prediction, VAR structurally reformulates the image generation into a coarse to fine next-scale prediction. 
+                        In this paper, we show that this scale-wise autoregressive framework can be effectively decoupled into intra-scale modeling, which captures local spatial dependencies within each scale, and inter-scale modeling, which models cross-scale relationships progressively from coarse-to-fine scales.
+                        This decoupling structure allows to rebuild VAR in a more computationally efficient manner. Specifically, for intra-scale modeling --- crucial for generating high-fidelity images --- we retain the original bidirectional self-attention design to ensure comprehensive modeling; for inter-scale modeling, which semantically connects different scales but is computationally intensive, we apply linear-complexity mechanisms like Mamba to substantially reduce computational overhead. 
+                        We term this new framework M-VAR. Extensive experiments demonstrate that our method outperforms existing models in both image quality and generation speed. For example, our 1.5B model, with fewer parameters and faster inference speed, outperforms the largest VAR-d30-2B. Moreover, our largest model M-VAR-d32 impressively registers 1.78 FID on ImageNet 256X256 and outperforms the prior-art autoregressive models LlamaGen/VAR by 0.4/0.19 and popular diffusion models LDM/DiT by 1.82/0.49, respectively.
+                     </li>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Decoupled Attention</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> We note that intra-scale attention scores account for 79.6% of the total attention scores in 256X256 image generation and 77.1% in 512X512 image generation. This dominance of intra-scale attention suggests that capturing fine-grained details within the same scale is crucial for high-quality image synthesis. More interestingly, we observe that the associated computation cost presents a contrasting scenario --- despite intra-scale attention contributing the most to the attention scores, it only consumes 23.92% of the computation cost for 256X256 images and 30.32% for 512X512 images; In stark contrast, inter-scale attention, which accounts for a much smaller portion of the attention scores (20.4% for 256X256 and 22.9% for 512X512 images), is responsible for the majority of the computation cost, \ie, 76.1% and 69.7% respectively. The disparity between the attention scores and computation cost highlights an inefficiency in the current attention configuration in VAR.  </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/analysis.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+                <!-- <tr>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Wall-E</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>an astronaut wearing a colorful spacesuit</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Transformed Bumblebee robot with intricate body details</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a batman mask</em></td>
+                </tr> -->
+            </tbody>
+        </table>
+
+
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Method</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>We propose a novel approach to optimize the computational efficiency of the scale-wise autoregressive image generation models. Specifically, we retain the standard attention mechanisms for intra-scale interactions, but, importantly,  employ Mamba for inter-scale interactions. The main motivation of this change is that Mamba is designed to handle long-range interactions efficiently that scales linearly with the sequence length, as opposed to the quadratic scaling of traditional attention mechanisms. This property makes Mamba particularly suitable for modeling inter-scale relationships, where the computational cost is otherwise prohibitive. We name this new method M-VAR. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+    </script>
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>Formally, as illustrated in Figure, M-VAR models inputs in the following two steps. First, given an image with multiple scales $S=[s_1, ..., s_n]$, 
+                        % M-VAR aims to model both intra-scale and inter-scale representations effectively while optimizing computational.
+                         we apply the standard attention mechanism independently to each scale for capturing the fine-grained details and local dependencies:
+                        \begin{equation}
+                            S^{'}=[s^{'}_1, ...,s^{'}_n]=[Attn(C), Attn(Upsample(s_1)), ..., Attn(Upsample(s_{n-1}))]
+                        \end{equation}
+                        Here, $Attn$ represents the standard attention, which produces the intra-scale representation, and $C$ is the condition token. All attention share the same parameters but process each scale independently. This design choice ensures consistency across scales and reduces the overall model complexity. For efficient implementation, we adopt FlashAttention~\citep{flash1,flash2} to perform the intra-scale attention in parallel.
+                        
+                        After obtaining the intra-scale representations $S^{'}$, modeling the relation between different scales becomes crucial for ensuring global coherence and coarse-to-fine consistency in the generated images. However, as previously discussed, traditional attention mechanisms are computationally expensive for inter-scale interactions due to their quadratic complexity, and we adopt the Mamba model with linear complexity, as
+                        \begin{equation}
+                            S^{''} =[s^{''}_1, ...,s^{''}_n]= Mamba(Concat([s^{'}_1, ..., s^{'}_{n}]))
+                        \end{equation}
+                        By concatenating $s^{'}$ from all scales into a single sequence, Mamba efficiently processes the combined representations, capturing the essential inter-scale interactions without incurring heavy computational burden. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/framework.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+                <!-- <tr>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Wall-E</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>an astronaut wearing a colorful spacesuit</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Transformed Bumblebee robot with intricate body details</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a batman mask</em></td>
+                </tr> -->
+            </tbody>
+        </table>
+
+        <!-- <table width="940" border="0"> -->
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Experiment Results</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> M-VAR consistently achieves lower FID scores and higher Inception Scores (IS), indicating superior image quality
+                        and diversity. M-VAR-d24 attains an FID of 1.93 and an IS of 320.7 with 1.5 billion
+                        parameters, which already surpasses the largest VAR model, VAR-d30, with 25% fewer parameters
+                        and 14% faster inference speed. M-VAR also shows compelling scalability — our largest model, M-
+                        VAR-d32, achieves state-of-the-art performance with an FID of 1.78 and an IS of 331.2, utilizing ∼3
+                        billion parameters. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/256_all.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+                <!-- <tr>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Wall-E</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>an astronaut wearing a colorful spacesuit</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a Transformed Bumblebee robot with intricate body details</em></td>
+                    <td style="text-align: center; width:25%; font-size: 12px;"><em>a batman mask</em></td>
+                </tr> -->
+            </tbody>
+        </table>
+
+        
+
+        <p class="section">&nbsp;</p>
+        <p class="section" id="bibtex"><b>Bibtex</b></p>
+        <table border="0">
+            <tbody>
+                
+                <pre style=" display: block;
+                      background: #eee;
+                      white-space: pre;
+                      -webkit-overflow-scrolling: touch;
+                      max-width: 100%;
+                      min-width: 100px;
+                      border-radius: 0px;
+                      ">
+                @misc{ren2024mvardecoupledscalewiseautoregressive,
+                    title={M-VAR: Decoupled Scale-wise Autoregressive Modeling for High-Quality Image Generation}, 
+                    author={Sucheng Ren and Yaodong Yu and Nataniel Ruiz and Feng Wang and Alan Yuille and Cihang Xie},
+                    year={2024},
+                    eprint={2411.10433},
+                    archivePrefix={arXiv},
+                    primaryClass={cs.CV},
+                    url={https://arxiv.org/abs/2411.10433}, 
+              }
+			  </pre>
+
+            
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WLX2Z5QLG8');
+ </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function () {
+
+        if (localStorage.getItem("my_app_name_here-quote-scroll") != null) {
+            $(window).scrollTop(localStorage.getItem("my_app_name_here-quote-scroll"));
+        }
+
+        $(window).on("scroll", function() {
+            localStorage.setItem("my_app_name_here-quote-scroll", $(window).scrollTop());
+        });
+
+      });
+ </script>
+
+ <script>
+    function prompt_on(prompt_element) {
+        prompt_element.classList.add("caption-active");
+    }
+
+    function prompt_off(prompt_element) {
+        prompt_element.classList.remove("caption-active");
+    }
+
+    function toggle_prompt(active_prompt_id, inactive_prompt_ids, result_id) {
+        let active_prompt = document.getElementById(active_prompt_id);
+        prompt_on(active_prompt);
+        for (let i = 0; i < inactive_prompt_ids.length; i++) {
+            let inactive_prompt = document.getElementById(inactive_prompt_ids[i]);
+            prompt_off(inactive_prompt);
+        }
+
+        let result = document.getElementById(result_id);
+        result.src = file_paths[active_prompt_id];
+    }
+ </script>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

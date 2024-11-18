@@ -1,0 +1,9 @@
+@misc{ren2024mvardecoupledscalewiseautoregressive,
+                    title={M-VAR: Decoupled Scale-wise Autoregressive Modeling for High-Quality Image Generation}, 
+                    author={Sucheng Ren and Yaodong Yu and Nataniel Ruiz and Feng Wang and Alan Yuille and Cihang Xie},
+                    year={2024},
+                    eprint={2411.10433},
+                    archivePrefix={arXiv},
+                    primaryClass={cs.CV},
+                    url={https://arxiv.org/abs/2411.10433}, 
+              }
