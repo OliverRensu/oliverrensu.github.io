@@ -1,0 +1,425 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://6.869.csail.mit.edu/fa19/schedule.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+<style>
+    @import url('https://fonts.cdnfonts.com/css/chalkduster');
+</style>
+<script src="./sm/assets/teaser-data.js"></script>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="description"
+        content="Project page for &#39;Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation&#39;">
+    <!-- <link rel="icon" href="./path.jpg"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="description"
+        content="Project page for &#39;DIRECT-3D: Learning Direct Text-to-3D Generation on Massive Noisy 3D Data.&#39;">
+    <!-- <link rel="icon" href="./path.jpeg"> -->
+</head>
+
+<body>
+    <p class="title">Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation</p>
+    <!-- <div style="text-align: center; font-size: 40pt; margin-bottom: 30px"> -->
+            <!-- <span>CVPR 2023</span> -->
+    <!-- </div> -->
+
+    &nbsp;<br>
+    <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px; font-size: 26px;">
+        <tbody>
+            <tr>
+                <td style="text-align: center; width:0%; "></td>
+            </tr>
+        </tbody>
+    </table>
+    &nbsp;<br>
+
+    <p class="author">
+        <span class="author-block">
+            <a href="https://oliverrensu.github.io/">Sucheng Ren</a><sup>1</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+              <a href="https://yucornetto.github.io/">Qihang Yu</a><sup>2</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+              <a href="https://tacju.github.io/">Ju He</a><sup>2</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+            <a href="https://xiaohuishen.github.io/">Xiaohui Shen</a><sup>2</sup>,&nbsp&nbsp
+          </span>
+          <span class="author-block">
+            <a href="https://ccvl.jhu.edu/team/">Alan Yuille</a><sup>1</sup>,&nbsp&nbsp
+          </span>
+          <span class="author-block">
+            <a href="http://liangchiehchen.com/">Liang-Chieh Chen</a><sup>2</sup>,&nbsp&nbsp
+          </span>
+
+          
+    </p>
+    <table border="0" align="center" class="affiliations">
+        <tbody align="center">
+            <tr>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>1</sup>&nbsp;Johns Hopkins University</td>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>2</sup>&nbsp;ByteDance</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+        <tbody>
+            <tr>
+                <td align="center"> <a href="https://arxiv.org/abs/2502.20388" target="_blank">[Paper]</a>&emsp;&emsp;<a href="https://github.com/OliverRensu/xAR">[Code & Models (Coming soon)]</a>&emsp;&emsp;<a href="bibtex.txt">[BibTeX]</a> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    &nbsp;<br>
+
+
+        
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <video id="teaser" autoplay="" muted="" loop="" playsinline="" width="80%" height="auto" onloadeddata="this.playbackRate = 2.0">
+                            <source src="./figs/animation.mp4" type="video/mp4" height= "auto">
+                        </video>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="text-align: center;"><span class="section"><strong>🔥 Highlights</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <p style="font-size: 20px;">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;; width:0%; "><li> We generalize next-<span style="color: rgb(0, 180, 0)"><b>token</b></span> prediction to next-<span style="color: rgb(255, 0, 0)"><b>X</b></span> prediction. </li>
+                                </tr>
+                            </tbody>
+                      
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;; width:0%; "><li> We find that next-<span style="color: rgb(255, 0, 0)"><b>cell</b></span> prediction yields the best performance by capturing richer spatial-semantic relationships.</li>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left;; width:0%; "><li>  We propose Noisy Context Learning (<span style="color: rgb(255, 0, 0)"><b>NCL</b></span>) by deliberately exposing the model to noisy contexts during training to address the problems in teacher forcing that during inference, errors accumulate over time.</li>
+                                    </tr>
+                                </tbody>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;; width:0%; "><li>  Our base model xAR-B (172M) outperforms the large DiT-XL and SiT-XL (675M) while achieving 20$\times$ faster inference. Additionally, our largest model, xAR-H (1.1B), sets a new state-of-the-art with an FID of <span style="color: rgb(255, 0, 0)"><b>1.24</b></span> on ImageNet-256, without relying on vision foundation models (e.g., DINOv2) or extra guidance interval sampling.</li>
+                                </tr>
+                            </tbody>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Abstract</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>Autoregressive (AR) modeling, known for its next-token prediction paradigm, underpins state-of-the-art language and visual generative models. Traditionally, a ``token'' is treated as the smallest prediction unit, often a discrete symbol in language or a quantized patch in vision. However, the optimal token definition for 2D image structures remains an open question. Moreover, AR models suffer from exposure bias, where teacher forcing during training leads to error accumulation at inference.
+                        In this paper, we propose xAR, a generalized AR framework that extends the notion of a token to an entity X, which can represent an individual patch token, a cell (a $k\times k$ grouping of neighboring patches), a subsample (a non-local grouping of distant patches), a scale (coarse-to-fine resolution), or even a whole image. Additionally, we reformulate discrete token classification as \textbf{continuous entity regression}, leveraging flow-matching methods at each AR step. This approach conditions training on noisy entities instead of ground truth tokens, leading to Noisy Context Learning, which effectively alleviates exposure bias.
+                        As a result, xAR offers two key advantages: (1) it enables flexible prediction units that capture different contextual granularity and spatial structures, and (2) it mitigates exposure bias by avoiding reliance on teacher forcing. Our base model, xAR-B, outperforms DiT-XL/SiT-XL with 20$\times$ faster inference, while our largest model, xAR-H, achieves a state-of-the-art 1.26 FID on the ImageNet-256 benchmark without relying on additional vision foundation modules (e.g., DINOv2) or advanced guidance interval sampling.
+                        Codes will be publicly released.
+                     </li>
+                </tr>
+            </tbody>
+        </table>
+
+
+        
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Next-X Prediction</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$','$'], ['\\(','\\)']],
+                    processEscapes: true
+                }
+            });
+            </script>
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/nextX.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <!-- <tr>
+                    <td style="text-align: left;; width:0%; "><li> Traditional AR faces the problem--Information Density.
+                        In NLP, each token (e.g., a word) carries rich semantic meaning. In contrast, visual tokens typically represent small image patches, which may not be as semantically meaningful in isolation. A single patch can contain fragments of different objects or textures, making it difficult for the model to infer meaningful relationships between consecutive patches. Additionally, the quantization process in VQ-VAE can discard fine details, leading to lower-quality reconstructions. As a result, even if the model predicts the next token correctly, the generated image may still appear blurry or lack detail.</li>
+                </tr> -->
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> xAR: Autoregressive (AR) Image Generation with Next-X Prediction. The proposed xAR adopts a general next-X prediction framework, where X is a flexible prediction entity that can correspond to: (a) an individual image patch (as in vanilla AR), (b) a cell (a group of spatially contiguous tokens), (c) a subsample (a non-local grouping), (d) an entire image (as in flow-matching), or (e) a scale (coarse-to-fine resolution, similar to VAR).
+                        We use <span style="color: rgb(255, 0, 0)"><b>red</b></span>, <span style="color: rgb(180, 210, 180)"><b>green</b></span>, <span style="color: rgb(150, 170, 230)"><b>blue</b></span>, <span style="color: rgb(235, 222, 184)"><b>yellow</b></span> to illustrate the first four AR prediction steps for each entity example.
+                        The <span style="color: gray"><b>gray</b></span> tokens represent the remaining tokens. </li>
+                </tr>
+            <!-- </tbody>
+            <tr>
+                <td style="text-align: left;; width:0%; "><li> Next-X prediction use Semantic-Rich Prediction Entity. A cell (i.e., a $k\times k$ grouping of spatially contiguous tokens) aggregates neighboring tokens, effectively capturing both local structures (e.g., edges, textures) and regional contexts (e.g., small objects or parts of larger objects).
+                    This leads to richer semantic representations compared to single-token predictions. By modeling relationships within the cell, the model learns to generate coherent local and regional features, shifting from isolated token-level predictions to holistic patterns.
+                    Additionally, predicting a cell rather than an individual token allows the model to reason at a higher abstraction level, akin to how NLP models predict words instead of characters. The larger receptive field per prediction step contributes more semantic information, bridging the gap between low-level visual patches and high-level semantics. </li>
+            </tr>
+        </tbody> -->
+        </table>
+
+
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Noisy Context Learning</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$','$'], ['\\(','\\)']],
+                    processEscapes: true
+                }
+            });
+            </script>
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/ncl.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <!-- <tr>
+                    <td style="text-align: left;; width:0%; "><li> Traditional AR faces the problem--Accumulated Errors.
+                        Teacher forcing, a common training strategy, feeds the model ground truth tokens to stabilize learning. However, this reliance on perfect context causes exposure bias—the model never learns to recover from its potential mistakes. During inference, when it must condition on its own predictions, small errors can accumulate over time, leading to compounding artifacts and degraded output quality. </li>
+                </tr> -->
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> Conditioning Mechanism Comparison between Vanilla AR vs xAR.
+                        During training, vanilla AR conditions on all preceding ground truth tokens (i.e., Teacher Forcing), whereas xAR conditions on all previous noisy entities, each with different noises (e.g., Noisy Context Learning).
+                        At inference, vanilla AR suffers from exposure bias, as errors accumulate over AR steps due to its exclusive training on ground truth tokens, leaving it unprepared for imperfect predictions. In contrast, xAR, trained to handle noisy inputs, reduces reliance on ground truth signals and improves robustness to prediction errors. </li>
+                </tr>
+            <!-- </tbody>
+            <tr>
+                <td style="text-align: left;; width:0%; "><li> NCL is Robustness to Previous Prediction Errors.
+                    The Noisy Context Learning (NCL) strategy trains the model on noisy entities instead of perfect ground truth inputs, reducing over-reliance on pristine contexts. This alignment between training and inference distributions enhances the model’s ability to handle errors in self-generated predictions.
+                    By conditioning on imperfect contexts, xAR learns to tolerate minor inaccuracies, preventing small errors from compounding into cascading errors. Additionally, exposure to noisy inputs encourages smoother representation learning, leading to more stable and consistent generations. </li>
+            </tr>
+        </tbody> -->
+        </table>
+        
+
+
+        <!-- &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Method</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>We propose a novel approach to optimize the computational efficiency of the scale-wise autoregressive image generation models. Specifically, we retain the standard attention mechanisms for intra-scale interactions, but, importantly,  employ Mamba for inter-scale interactions. The main motivation of this change is that Mamba is designed to handle long-range interactions efficiently that scales linearly with the sequence length, as opposed to the quadratic scaling of traditional attention mechanisms. This property makes Mamba particularly suitable for modeling inter-scale relationships, where the computational cost is otherwise prohibitive. We name this new method M-VAR. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+    </script>
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>Formally, as illustrated in Figure, M-VAR models inputs in the following two steps. First, given an image with multiple scales $S=[s_1, ..., s_n]$, 
+                        % M-VAR aims to model both intra-scale and inter-scale representations effectively while optimizing computational.
+                         we apply the standard attention mechanism independently to each scale for capturing the fine-grained details and local dependencies:
+                        \begin{equation}
+                            S^{'}=[s^{'}_1, ...,s^{'}_n]=[Attn(C), Attn(Upsample(s_1)), ..., Attn(Upsample(s_{n-1}))]
+                        \end{equation}
+                        Here, $Attn$ represents the standard attention, which produces the intra-scale representation, and $C$ is the condition token. All attention share the same parameters but process each scale independently. This design choice ensures consistency across scales and reduces the overall model complexity. For efficient implementation, we adopt FlashAttention~\citep{flash1,flash2} to perform the intra-scale attention in parallel.
+                        
+                        After obtaining the intra-scale representations $S^{'}$, modeling the relation between different scales becomes crucial for ensuring global coherence and coarse-to-fine consistency in the generated images. However, as previously discussed, traditional attention mechanisms are computationally expensive for inter-scale interactions due to their quadratic complexity, and we adopt the Mamba model with linear complexity, as
+                        \begin{equation}
+                            S^{''} =[s^{''}_1, ...,s^{''}_n]= Mamba(Concat([s^{'}_1, ..., s^{'}_{n}]))
+                        \end{equation}
+                        By concatenating $s^{'}$ from all scales into a single sequence, Mamba efficiently processes the combined representations, capturing the essential inter-scale interactions without incurring heavy computational burden. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/framework.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+            </tbody>
+        </table> -->
+
+        <!-- <table width="940" border="0"> -->
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Experiment Results</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> 
+                        Out best variant, xAR-H, achieves a new state-of-the-art-performance of 1.24 FID, outperforming the GAN-based StyleGAN-XL, masked-prediction-based MaskBit, AR-based RAR, VAR, MAR, and flow-matching-based REPA. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/exp.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> Our most lightweight variant, xAR-B (172M), outperforms DiT-XL (diffusion-based), SiT-XL (flow matching-based), and MAR (autoregressive-based), while achieving a 19.6$\times$ speedup.
+                        Additionally, xAR-L surpasses the recent state-of-the-art model REPA, running 5.3$\times$ faster.
+                        Finally, our largest model, xAR-H, achieves 1.24 FID on ImageNet-256, setting a new state-of-the-art, while still running 2.2$\times$ faster than REPA. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="40%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/time.png" alt="" style="width: 40%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+
+
+
+
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Visualization</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/visual.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+
+
+
+        
+
+        <p class="section">&nbsp;</p>
+        <p class="section" id="bibtex"><b>Bibtex</b></p>
+        <table border="0">
+            <tbody>
+                
+                <pre style=" display: block;
+                      background: #eee;
+                      white-space: pre;
+                      -webkit-overflow-scrolling: touch;
+                      max-width: 100%;
+                      min-width: 100px;
+                      border-radius: 0px;
+                      ">
+                @article{ren2025nexttokennextxpredictionautoregressive,
+                    title={Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation}, 
+                    author={Sucheng Ren and Qihang Yu and Ju He and Xiaohui Shen and Alan Yuille and Liang-Chieh Chen},
+                    year={2025},
+                    eprint={2502.20388},
+                    archivePrefix={arXiv},
+                    primaryClass={cs.CV},
+                    url={https://arxiv.org/abs/2502.20388}, 
+                            }
+			  </pre>
+
+            
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WLX2Z5QLG8');
+ </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function () {
+
+        if (localStorage.getItem("my_app_name_here-quote-scroll") != null) {
+            $(window).scrollTop(localStorage.getItem("my_app_name_here-quote-scroll"));
+        }
+
+        $(window).on("scroll", function() {
+            localStorage.setItem("my_app_name_here-quote-scroll", $(window).scrollTop());
+        });
+
+      });
+ </script>
+
+ <script>
+    function prompt_on(prompt_element) {
+        prompt_element.classList.add("caption-active");
+    }
+
+    function prompt_off(prompt_element) {
+        prompt_element.classList.remove("caption-active");
+    }
+
+    function toggle_prompt(active_prompt_id, inactive_prompt_ids, result_id) {
+        let active_prompt = document.getElementById(active_prompt_id);
+        prompt_on(active_prompt);
+        for (let i = 0; i < inactive_prompt_ids.length; i++) {
+            let inactive_prompt = document.getElementById(inactive_prompt_ids[i]);
+            prompt_off(inactive_prompt);
+        }
+
+        let result = document.getElementById(result_id);
+        result.src = file_paths[active_prompt_id];
+    }
+ </script>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
