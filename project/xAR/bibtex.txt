@@ -1,4 +1,4 @@
-@article{ren2025nexttokennextxpredictionautoregressive,
+@article{ren2025xar,
                     title={Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation}, 
                     author={Sucheng, Ren and Qihang, Yu and Ju, He and Xiaohui, Shen and Alan, Yuille and Liang-Chieh, Chen},
                     year={2025},
