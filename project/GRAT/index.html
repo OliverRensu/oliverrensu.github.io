@@ -1,0 +1,629 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://6.869.csail.mit.edu/fa19/schedule.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+<style>
+    @import url('https://fonts.cdnfonts.com/css/chalkduster');
+</style>
+<script src="./sm/assets/teaser-data.js"></script>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Grouping First, Attending Smartly: Training-Free Acceleration for Diffusion Transformers</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="description"
+        content="Project page for &#39;Grouping First, Attending Smartly: Training-Free Acceleration for Diffusion Transformers&#39;">
+    <!-- <link rel="icon" href="./path.jpg"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Grouping First, Attending Smartly: Training-Free Acceleration for Diffusion Transformers</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="description"
+        content="Project page for &#39;DIRECT-3D: Learning Direct Text-to-3D Generation on Massive Noisy 3D Data.&#39;">
+    <!-- <link rel="icon" href="./path.jpeg"> -->
+</head>
+
+<body>
+    <p class="title">Grouping First, Attending Smartly: Training-Free Acceleration for Diffusion Transformers</p>
+    <!-- <div style="text-align: center; font-size: 40pt; margin-bottom: 30px"> -->
+            <!-- <span>CVPR 2023</span> -->
+    <!-- </div> -->
+
+    &nbsp;<br>
+    <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px; font-size: 26px;">
+        <tbody>
+            <tr>
+                <td style="text-align: center; width:0%; "></td>
+            </tr>
+        </tbody>
+    </table>
+    &nbsp;<br>
+
+    <p class="author">
+        <span class="author-block">
+            <a href="https://oliverrensu.github.io/">Sucheng Ren</a><sup>1</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+              <a href="https://yucornetto.github.io/">Qihang Yu</a><sup>2</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+              <a href="https://tacju.github.io/">Ju He</a><sup>2</sup>,&nbsp&nbsp</span>
+          <span class="author-block">
+            <a href="https://ccvl.jhu.edu/team/">Alan Yuille</a><sup>1</sup>,&nbsp&nbsp
+          </span>
+          <span class="author-block">
+            <a href="http://liangchiehchen.com/">Liang-Chieh Chen</a><sup>2</sup>,&nbsp&nbsp
+          </span>
+
+          
+    </p>
+    <table border="0" align="center" class="affiliations">
+        <tbody align="center">
+            <tr>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>1</sup>&nbsp;Johns Hopkins University</td>
+                <td style="text-align: center; width:0%; ">&nbsp;<sup>2</sup>&nbsp;Independent Researcher</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+        <tbody>
+            <tr>
+                <td align="center"> <a href="https://arxiv.org/abs/NA" target="_blank">[Paper]</a>&emsp;&emsp;<a href="https://github.com/OliverRensu/GRAT">[Code]</a>&emsp;&emsp;<a href="bibtex.txt">[BibTeX]</a> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    &nbsp;<br>
+    <!-- <style>
+  table.menu caption {
+    caption-side: bottom;      /* 放到表格底部 */
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 8px;
+    color: #333;
+  }
+</style> -->
+        
+        <table width="60%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <figure style="margin: 0; width: 90%;">
+          <video
+            id="teaser1"
+            autoplay
+            muted
+            loop
+            playsinline
+            width="91%"
+            onloadeddata="this.playbackRate = 1.5"
+          >
+            <source src="./figs/hunyuan.mp4" type="video/mp4">
+          </video>
+          <figcaption>Full Attention</figcaption>
+        </figure>
+      </td>
+      <td align="center">
+        <figure style="margin: 0; width: 90%;">
+          <video
+            id="teaser2"
+            autoplay
+            muted
+            loop
+            playsinline
+            width="100%"
+            onloadeddata="this.playbackRate = 2.0"
+          >
+            <source src="./figs/ours.mp4" type="video/mp4">
+          </video>
+          <figcaption>GRAT</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </tbody>
+  <caption style="color: black; font-style: normal;">Using HunyuanVideo for text-to-video generation, GRAT delivers a 15.8× improvement in attention efficiency over full attention and generates a 5-second 720p video 3.8× faster.</caption>
+</table>
+
+        <p style="text-align: center;"><span class="section"><strong>🔥 Highlights</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/attention.png" alt="" style="width: 60%; height: auto;">
+                </figure>
+            </tbody>
+            <tbody>
+                <tr>
+                    <p style="font-size: 20px;">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;; width:0%; "><li> The majority of attention mass is concentrated in a query token's local spatial neighborhood. </li>
+                                </tr>
+                            </tbody>
+                      
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;; width:0%; "><li> Preserving a small set of long-range dependencies is sufficient to maintain large
+receptive fields and global coherence.</li>
+                                </tr>
+                            </tbody>
+                        <tbody>
+            </tbody>
+        </table>
+        
+        
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Abstract</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>Diffusion-based Transformers have demonstrated impressive generative capabilities, but their high computational costs hinder practical deployment—for example, generating an $8192\times8192$ image can take over an hour on an A100 GPU.
+In this work, we propose GRAT (GRouping first, ATtending smartly), a training-free attention acceleration strategy for fast image and video generation without compromising output quality.
+The key insight is to exploit the inherent sparsity in learned attention maps (which tend to be locally focused) in pretrained Diffusion Transformers and leverage better GPU parallelism.
+Specifically, GRAT first partitions contiguous tokens into non-overlapping groups, aligning both with GPU execution patterns and the local attention structures learned in pretrained generative Transformers.
+It then accelerates attention by having all query tokens within the same group share a common set of attendable key and value tokens. These key and value tokens are further restricted to structured regions, such as surrounding blocks or criss-cross regions, significantly reducing computational overhead (e.g., attaining a 35.8$\times$ speedup over full attention when generating $8192\times8192$ images) while preserving essential attention patterns and long-range context.
+We validate GRAT on pretrained Flux and HunyuanVideo for image and video generation, respectively.
+In both cases, GRAT achieves substantially faster inference without any fine-tuning, while maintaining the performance of full attention.
+We hope GRAT will inspire future research on accelerating Diffusion Transformers for scalable visual generation.
+                     </li>
+                </tr>
+            </tbody>
+        </table>
+
+
+        
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>GRAT</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$','$'], ['\\(','\\)']],
+                    processEscapes: true
+                }
+            });
+            </script>
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/method.png" alt="" style="width: 60%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <!-- <tr>
+                    <td style="text-align: left;; width:0%; "><li> Traditional AR faces the problem--Information Density.
+                        In NLP, each token (e.g., a word) carries rich semantic meaning. In contrast, visual tokens typically represent small image patches, which may not be as semantically meaningful in isolation. A single patch can contain fragments of different objects or textures, making it difficult for the model to infer meaningful relationships between consecutive patches. Additionally, the quantization process in VQ-VAE can discard fine details, leading to lower-quality reconstructions. As a result, even if the model predicts the next token correctly, the generated image may still appear blurry or lack detail.</li>
+                </tr> -->
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>  Query tokens are shown in red, and their corresponding attended regions (key and value tokens) are highlighted in light blue.
+    (a) Full Attention: each query attends to the entire feature map.
+    (b) Neighborhood Attention: each query attends only to its local spatial neighborhood.
+    (c) Criss-cross Attention: each query attends to tokens in the same row and column.
+    (d–f) In this work, we propose GRAT (GRouping first, ATtending smartly), which first partitions the feature map into non-overlapping groups (d) (each group has $2 \times 2$ tokens in this example). Query tokens within the same group share a common set of key and value tokens, which are restricted to structured regions—such as surrounding blocks (e) or criss-cross patterns (f). </li>
+                </tr>
+            <!-- </tbody>
+            <tr>
+                <td style="text-align: left;; width:0%; "><li> Next-X prediction use Semantic-Rich Prediction Entity. A cell (i.e., a $k\times k$ grouping of spatially contiguous tokens) aggregates neighboring tokens, effectively capturing both local structures (e.g., edges, textures) and regional contexts (e.g., small objects or parts of larger objects).
+                    This leads to richer semantic representations compared to single-token predictions. By modeling relationships within the cell, the model learns to generate coherent local and regional features, shifting from isolated token-level predictions to holistic patterns.
+                    Additionally, predicting a cell rather than an individual token allows the model to reason at a higher abstraction level, akin to how NLP models predict words instead of characters. The larger receptive field per prediction step contributes more semantic information, bridging the gap between low-level visual patches and high-level semantics. </li>
+            </tr>
+        </tbody> -->
+        </table>
+
+
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Comparison of Attention Schemes</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$','$'], ['\\(','\\)']],
+                    processEscapes: true
+                }
+            });
+            </script>
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/comparison.png" alt="" style="width: 60%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <!-- <tr>
+                    <td style="text-align: left;; width:0%; "><li> Traditional AR faces the problem--Accumulated Errors.
+                        Teacher forcing, a common training strategy, feeds the model ground truth tokens to stabilize learning. However, this reliance on perfect context causes exposure bias—the model never learns to recover from its potential mistakes. During inference, when it must condition on its own predictions, small errors can accumulate over time, leading to compounding artifacts and degraded output quality. </li>
+                </tr> -->
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> The comparison is based on Flux with various attention mechanisms, including Full Attention, Neighborhood Attention, and the proposed GRAT-B and GRAT-X.
+    FLOPs Sparsity measures the theoretical reduction in compute relative to Full Attention (0\% indicates no reduction).
+    Inference Speedup reflects real-world speedup on an A100 GPU, relative to Full Attention (1$\times$ means no speedup).
+    Farthest Token Distance denotes the maximum distance over which a query can attend—representing the effective receptive field.
+    As shown, GRAT-B achieves the same FLOPs sparsity as Neighborhood Attention (NA) but delivers higher inference speedup. Conversely, GRAT-X maintains comparable speedup while offering a much larger receptive field. Both variants outperform NA in GenEval scores, with GRAT-X notably matching the quality of Full Attention while running 12$\times$ faster. </li>
+                </tr>
+            <!-- </tbody>
+            <tr>
+                <td style="text-align: left;; width:0%; "><li> NCL is Robustness to Previous Prediction Errors.
+                    The Noisy Context Learning (NCL) strategy trains the model on noisy entities instead of perfect ground truth inputs, reducing over-reliance on pristine contexts. This alignment between training and inference distributions enhances the model’s ability to handle errors in self-generated predictions.
+                    By conditioning on imperfect contexts, xAR learns to tolerate minor inaccuracies, preventing small errors from compounding into cascading errors. Additionally, exposure to noisy inputs encourages smoother representation learning, leading to more stable and consistent generations. </li>
+            </tr>
+        </tbody> -->
+        </table>
+        
+
+
+        <!-- &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Method</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>We propose a novel approach to optimize the computational efficiency of the scale-wise autoregressive image generation models. Specifically, we retain the standard attention mechanisms for intra-scale interactions, but, importantly,  employ Mamba for inter-scale interactions. The main motivation of this change is that Mamba is designed to handle long-range interactions efficiently that scales linearly with the sequence length, as opposed to the quadratic scaling of traditional attention mechanisms. This property makes Mamba particularly suitable for modeling inter-scale relationships, where the computational cost is otherwise prohibitive. We name this new method M-VAR. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+    </script>
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li>Formally, as illustrated in Figure, M-VAR models inputs in the following two steps. First, given an image with multiple scales $S=[s_1, ..., s_n]$, 
+                        % M-VAR aims to model both intra-scale and inter-scale representations effectively while optimizing computational.
+                         we apply the standard attention mechanism independently to each scale for capturing the fine-grained details and local dependencies:
+                        \begin{equation}
+                            S^{'}=[s^{'}_1, ...,s^{'}_n]=[Attn(C), Attn(Upsample(s_1)), ..., Attn(Upsample(s_{n-1}))]
+                        \end{equation}
+                        Here, $Attn$ represents the standard attention, which produces the intra-scale representation, and $C$ is the condition token. All attention share the same parameters but process each scale independently. This design choice ensures consistency across scales and reduces the overall model complexity. For efficient implementation, we adopt FlashAttention~\citep{flash1,flash2} to perform the intra-scale attention in parallel.
+                        
+                        After obtaining the intra-scale representations $S^{'}$, modeling the relation between different scales becomes crucial for ensuring global coherence and coarse-to-fine consistency in the generated images. However, as previously discussed, traditional attention mechanisms are computationally expensive for inter-scale interactions due to their quadratic complexity, and we adopt the Mamba model with linear complexity, as
+                        \begin{equation}
+                            S^{''} =[s^{''}_1, ...,s^{''}_n]= Mamba(Concat([s^{'}_1, ..., s^{'}_{n}]))
+                        \end{equation}
+                        By concatenating $s^{'}$ from all scales into a single sequence, Mamba efficiently processes the combined representations, capturing the essential inter-scale interactions without incurring heavy computational burden. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/framework.png" alt="" style="width: 80%; height: auto;">
+                </figure>
+            </tbody>
+        </table> -->
+
+        <!-- <table width="940" border="0"> -->
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Experiment Results</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="80%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <tr>
+                    <td style="text-align: left;; width:0%; "><li> 
+                        GRAT-X is on par with full attention, showing that combining local and selective long-range attention can effectively approximate dense attention. </li>
+                </tr>
+            </tbody>
+        </table>
+        <table width="90%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/exp.png" alt="" style="width: 60%; height: auto;">
+                </figure>
+            </tbody>
+        </table>
+
+
+
+
+
+        <!-- &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Visualization</strong></span></p>
+        <p class="section">&nbsp;</p>
+        <table width="60%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <figure style="text-align: center;">
+                    <img src="./figs/image.png" alt="" style="width: 60%; height: auto;">
+                </figure>
+            </tbody>
+        </table> -->
+
+
+
+&nbsp;<br>
+<hr class="hr-twill-colorful">
+&nbsp;<br>
+<p style="text-align: center;"><span class="section"><strong>Visualization</strong></span></p>
+<p class="section">&nbsp;</p>
+<table width="60%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+                <div id="imageCarousel" class="carousel slide teaser-carousel" data-ride="carousel" data-interval="5000" style="width: 60%; margin: 0 auto;">
+                    <div class="carousel-inner">
+                        <!-- Uncurated 512 × 512 DiMR samples. Class label = ‘macaw’ (88) -->
+                        <div class="carousel-item active">
+                            <div>
+                                <img class="teaser-img" src="./figs/1.png" />
+                            </div>
+
+                            <!-- <br /> -->
+                        </div>
+
+                        <!-- Uncurated 512 × 512 DiMR samples. Class label = ‘sulphur-crested cockatoo’ (89) -->
+                        <div class="carousel-item">
+                            <div>
+                                <img class="teaser-img" src="./figs/2.png" />
+                            </div>
+                            <!-- <br /> -->
+                        </div>
+
+
+                        <!-- Uncurated 512 × 512 DiMR samples. Class label = ‘husky’ (250) -->
+                        <div class="carousel-item">
+                            <div>
+                                <img class="teaser-img" src="./figs/3.png" />
+                            </div>
+                            <!-- <br /> -->
+                        </div>
+
+                        <div class="carousel-item">
+                            <div>
+                                <img class="teaser-img" src="./figs/4.png" />
+                            </div>
+                            <!-- <br /> -->
+                        </div>
+
+                        <div class="carousel-item">
+                            <div>
+                                <img class="teaser-img" src="./figs/5.png" />
+                            </div>
+                            <!-- <br /> -->
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                        <div class="slider-navigation-previous">
+                            <svg viewBox="0 0 50 80" xml:space="preserve">
+                                <polyline fill="white" stroke-width=".5em" stroke-linecap="round"
+                                    stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 ">
+                                </polyline>
+                            </svg>
+                        </div>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                        <div class="slider-navigation-next">
+                            <svg viewBox="0 0 50 80" xml:space="preserve">
+                                <polyline fill="white" stroke-width=".5em" stroke-linecap="round"
+                                    stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 ">
+                                </polyline>
+                            </svg>
+                        </div>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </tbody>
+        </table>
+        &nbsp;<br>
+
+
+
+
+
+        
+        &nbsp;<br>
+        <hr class="hr-twill-colorful">
+        &nbsp;<br>
+        <p style="text-align: center;"><span class="section"><strong>Videos</strong></span></p>
+        <p class="section">&nbsp;</p>
+         <table width="60%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+    <tr>
+      <td align="center">
+        <video
+          id="teaser1"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="100%"
+          style="max-width: 95%; height: auto;"
+          onloadeddata="this.playbackRate = 2."
+        >
+          <source src="./figs/video1.mp4" type="video/mp4">
+        </video>
+      </td>
+
+      <td align="center">
+        <video
+          id="teaser2"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="100%"
+          style="max-width: 95%; height: auto;"
+          onloadeddata="this.playbackRate = 2.0"
+        >
+          <source src="./figs/video2.mp4" type="video/mp4">
+        </video>
+      </td>
+
+      <td align="center">
+        <video
+          id="teaser3"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="100%"
+          style="max-width: 95%; height: auto;"
+          onloadeddata="this.playbackRate = 2."
+        >
+          <source src="./figs/video3.mp4" type="video/mp4">
+        </video>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+  <table width="60%" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+            <tbody>
+    <tr>
+      <td align="center">
+        <video
+          id="teaser1"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="100%"
+          style="max-width: 95%; height: auto;"
+          onloadeddata="this.playbackRate = 2."
+        >
+          <source src="./figs/video4.mp4" type="video/mp4">
+        </video>
+      </td>
+
+      <td align="center">
+        <video
+          id="teaser2"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="100%"
+          style="max-width: 95%; height: auto;"
+          onloadeddata="this.playbackRate = 2.0"
+        >
+          <source src="./figs/video5.mp4" type="video/mp4">
+        </video>
+      </td>
+
+      <td align="center">
+        <video
+          id="teaser3"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="100%"
+          style="max-width: 95%; height: auto;"
+          onloadeddata="this.playbackRate = 2."
+        >
+          <source src="./figs/video6.mp4" type="video/mp4">
+        </video>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+        
+
+        <p class="section">&nbsp;</p>
+        <p class="section" id="bibtex"><b>Bibtex</b></p>
+        <table border="0">
+            <tbody>
+                
+                <pre style=" display: block;
+                      background: #eee;
+                      white-space: pre;
+                      -webkit-overflow-scrolling: touch;
+                      max-width: 100%;
+                      min-width: 100px;
+                      border-radius: 0px;
+                      ">
+                @article{ren2025grat,
+                    title={Grouping First, Attending Smartly: Training-Free Acceleration for Diffusion Transformers}, 
+                    author={Sucheng, Ren and Qihang, Yu and Ju, He and Alan, Yuille and Liang-Chieh, Chen},
+                    year={2025},
+                    journal={arXiv preprint arXiv:NA}}
+			  </pre>
+
+            
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WLX2Z5QLG8');
+ </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function () {
+
+        if (localStorage.getItem("my_app_name_here-quote-scroll") != null) {
+            $(window).scrollTop(localStorage.getItem("my_app_name_here-quote-scroll"));
+        }
+
+        $(window).on("scroll", function() {
+            localStorage.setItem("my_app_name_here-quote-scroll", $(window).scrollTop());
+        });
+
+      });
+ </script>
+
+ <script>
+    function prompt_on(prompt_element) {
+        prompt_element.classList.add("caption-active");
+    }
+
+    function prompt_off(prompt_element) {
+        prompt_element.classList.remove("caption-active");
+    }
+
+    function toggle_prompt(active_prompt_id, inactive_prompt_ids, result_id) {
+        let active_prompt = document.getElementById(active_prompt_id);
+        prompt_on(active_prompt);
+        for (let i = 0; i < inactive_prompt_ids.length; i++) {
+            let inactive_prompt = document.getElementById(inactive_prompt_ids[i]);
+            prompt_off(inactive_prompt);
+        }
+
+        let result = document.getElementById(result_id);
+        result.src = file_paths[active_prompt_id];
+    }
+ </script>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
