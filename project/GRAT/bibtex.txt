@@ -1,5 +1,6 @@
-@article{ren2025xar,
-       title={Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation}, 
-       author={Sucheng, Ren and Qihang, Yu and Ju, He and Xiaohui, Shen and Alan, Yuille and Liang-Chieh, Chen},
-       year={2025},
-        journal={arXiv preprint arXiv:2502.20388}}
+@article{ren2025grat,
+  title={Grouping First, Attending Smartly: Training-Free Acceleration for Diffusion Transformers},
+  author={Ren, Sucheng and Yu, Qihang and He, Ju and Yuille, Alan and Chen, Liang-Chieh},
+  journal={arXiv preprint arXiv:2505.14687},
+  year={2025}
+}
